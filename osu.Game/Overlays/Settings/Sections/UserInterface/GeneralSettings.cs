@@ -14,11 +14,18 @@ namespace osu.Game.Overlays.Settings.Sections.UserInterface
     {
         protected override LocalisableString Header => CommonStrings.General;
 
+        private SettingsCheckbox legacySkinUI = null!;
+
         [BackgroundDependencyLoader]
         private void load(OsuConfigManager config)
         {
             Children = new Drawable[]
             {
+                legacySkinUI = new SettingsCheckbox
+                {
+                    LabelText = UserInterfaceStrings.LegacySkinUI,
+                    Current = config.GetBindable<bool>(OsuSetting.LegacySkinUI),
+                },
                 new SettingsCheckbox
                 {
                     LabelText = UserInterfaceStrings.CursorRotation,
@@ -44,6 +51,17 @@ namespace osu.Game.Overlays.Settings.Sections.UserInterface
                     KeyboardStep = 50
                 },
             };
+            legacySkinUI.Current.BindValueChanged(LegacySkinUISetting =>
+            {
+                if (LegacySkinUISetting.NewValue)
+                {
+                    legacySkinUI.SetNoticeText(UserInterfaceStrings.LegacySkinUIWarning, true);
+                }
+                else
+                {
+                    legacySkinUI.ClearNoticeText();
+                }
+            }, true);
         }
     }
 }

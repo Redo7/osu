@@ -130,6 +130,8 @@ namespace osu.Game.Configuration
             SetDefault(OsuSetting.BeatmapColours, true);
             SetDefault(OsuSetting.BeatmapHitsounds, true);
 
+            SetDefault(OsuSetting.LegacySkinUI, false);
+
             SetDefault(OsuSetting.CursorRotation, true);
 
             SetDefault(OsuSetting.MenuParallax, true);
@@ -385,6 +387,7 @@ namespace osu.Game.Configuration
         MenuMusic,
         MenuVoice,
         MenuTips,
+        LegacySkinUI,
         CursorRotation,
         MenuParallax,
         Prefer24HourTime,

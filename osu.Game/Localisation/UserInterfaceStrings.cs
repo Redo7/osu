@@ -15,6 +15,15 @@ namespace osu.Game.Localisation
         public static LocalisableString UserInterfaceSectionHeader => new TranslatableString(getKey(@"user_interface_section_header"), @"User Interface");
 
         /// <summary>
+        /// "Use legacy UI for legacy skins"
+        /// </summary>
+        public static LocalisableString LegacySkinUI => new TranslatableString(getKey(@"legacy_skin_ui"), @"Use legacy UI for legacy skins");
+        /// <summary>
+        /// "Legacy skins use static assets which do not conform to the user's resolution. They may, or may not look &quot;broken&quot; depending on the aspect ratio of your screen. Enabling this option will also get rid of many UI features specific to this client."
+        /// </summary>
+        public static LocalisableString LegacySkinUIWarning => new TranslatableString(getKey(@"legacy_skin_ui_warning"), @"Legacy skins use static assets which do not conform to the user's resolution. They may, or may not look ""broken"" depending on the aspect ratio of your screen. Enabling this option will also get rid of many UI features specific to this client.");
+
+        /// <summary>
         /// "Rotate cursor when dragging"
         /// </summary>
         public static LocalisableString CursorRotation => new TranslatableString(getKey(@"cursor_rotation"), @"Rotate cursor when dragging");
